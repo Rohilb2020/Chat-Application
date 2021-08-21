@@ -1,0 +1,56 @@
+<!-- Registration Form -->
+<ion-content>
+
+  <ion-header translucent>
+    <ion-toolbar>
+      <ion-title>Register</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-content>
+
+      <form [formGroup]="userCreds">
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input placeholder="Ex. abc@example.com" formControlName="emails" #email></ion-input>
+        </ion-item>
+        <ion-label class="errors" *ngIf="userCreds.get('emails').invalid && userCreds.get('emails').dirty">
+          {{getErrorMessageEmail()}}
+        </ion-label>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input [type]="hide? 'password': 'text'" formControlName="password" #pass></ion-input>
+          <ion-icon [name]="icon" slot="end" (click)="showPassword()" class="ion-align-self-end"></ion-icon>
+        </ion-item>
+        <ion-label class="errors" *ngIf="userCreds.get('password').invalid && userCreds.get('password').dirty ">
+          {{getErrorMessagePass()}}</ion-label>
+      </form>
+
+      <div class="btn_container">
+        <ion-button [routerLink]="['/login']" color="light" mode="md" size="small"
+          class="ion-activatable ripple-parent">
+          Login
+          <ion-ripple-effect></ion-ripple-effect>
+        </ion-button>
+        <ion-button color="primary" mode="md" size="small" class="ion-activatable ripple-parent"
+          (click)="auth.Register(email.value,pass.value)">
+          Sign Up
+          <ion-ripple-effect></ion-ripple-effect>
+        </ion-button>
+      </div>
+
+      <br>
+      <div id="btn_seperator">----------------------OR----------------------</div>
+
+      <div class="auth_btn_container">
+        <ion-button id="google_btn" color="light" mode="md" class="ion-activatable ripple-parent"
+          (click)="auth.GoogleSignIn()">
+          <ion-icon name="logo-google"></ion-icon>
+          <ion-ripple-effect></ion-ripple-effect>
+        </ion-button>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>

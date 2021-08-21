@@ -1,0 +1,87 @@
+.send_icon {
+  cursor: pointer;
+  color: #23aaf2;
+}
+
+ion-header {
+  position: sticky;
+  top: 0;
+}
+
+#fixed-input {
+  box-sizing: border-box;
+  padding: 0 10px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  bottom: 0;
+  width: 99%;
+}
+
+.btn_container {
+  flex: 1%;
+}
+
+ion-item-group {
+  flex: 99%;
+}
+
+ion-input {
+  padding: 4px 6px !important;
+  z-index: 1;
+  border-radius: 20px;
+  background-color: #d3d3d3;
+  opacity: 0.8;
+}
+
+ion-card-title {
+  color: tomato;
+}
+
+ion-card-subtitle {
+  color: #d3d3d3;
+}
+
+.title_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+ion-card {
+  background: whitesmoke;
+  padding: 4px 6px;
+  margin: 15px;
+}
+
+.all_message_container {
+  margin-bottom: 90px;
+}
+
+ion-fab {
+  margin-top: 40px;
+  margin-right: 10px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+app-uploadfile {
+  display: block;
+  margin-bottom: 80px;
+  padding: 0 20px;
+}
+
+.upload_flex_box {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+a > ion-icon {
+  color: #39e600;
+}

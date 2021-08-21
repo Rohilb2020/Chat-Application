@@ -1,0 +1,56 @@
+.ripple-parent {
+  position: relative;
+  overflow: hidden;
+}
+
+ion-card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px 25px;
+}
+
+ion-item {
+  width: 100%;
+  position: relative;
+  margin: 2px auto;
+}
+
+.btn_container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn_container > ion-button {
+  margin-left: 5px;
+}
+
+.errors {
+  font-size: 11px;
+  color: #f44336;
+}
+
+#btn_seperator {
+  margin-top: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+#google_btn {
+  // --background: whitesmoke;
+  height: 50px;
+  width: 50px;
+  --border-radius: 50%;
+  margin-top: 12px;
+  --box-shadow: none;
+}
+
+.auth_btn_container {
+  display: flex;
+  justify-content: center;
+}

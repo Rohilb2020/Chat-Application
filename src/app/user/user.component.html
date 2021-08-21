@@ -1,0 +1,71 @@
+<ion-content>
+
+  <ion-header translucent>
+    <ion-toolbar>
+      <ion-title>Chat App</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div slot="fixed" id="fixed-input">
+
+    <div class="btn_container">
+      <input type="file" (change)="attach($event.target.files)" #fileUpload multiple />
+      <ion-fab-button (click)="fileUpload.click()" size="small" id="upload_btn">
+        <ion-icon name="attach-outline"></ion-icon>
+      </ion-fab-button>
+    </div>
+
+    <ion-item-group class="ion-padding" [formGroup]="userForm">
+      <ion-item lines="none" class="padding">
+        <ion-input placeholder="Type a message" autocomplete="off" formControlName="content"></ion-input>
+
+        <ion-icon class="send_icon" name="send-sharp" (click)="addPost()" slot="end"></ion-icon>
+      </ion-item>
+    </ion-item-group>
+
+  </div>
+
+
+  <ion-fab edge horizontal="end" vertical="top" slot="fixed">
+    <ion-fab-button (click)="auth.Logout()">
+      <ion-icon name="log-out"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <div class="all_message_container">
+    <div *ngFor="let item of items | async " class="message_container">
+      <ion-card *ngIf="!item.filePath; else uploadMessage ">
+        <div class="title_container">
+          <ion-card-title color="primary">{{item.user}}</ion-card-title>
+          <ion-card-subtitle *ngIf="item.createdAt">{{convertToDate(item.createdAt)}}</ion-card-subtitle>
+        </div>
+        <ion-card-content>{{item.content}}</ion-card-content>
+
+      </ion-card>
+
+      <ng-template #uploadMessage>
+        <ion-card>
+          <div class="title_container">
+            <ion-card-title color="primary">{{item.user}}</ion-card-title>
+            <ion-card-subtitle *ngIf="item.createdAt">{{convertToDate(item.createdAt)}}</ion-card-subtitle>
+          </div>
+          <ion-card-content class="upload_flex_box">
+            <div><strong>{{item.content}}</strong></div>
+            <a [href]="item.filePath" target="_blank">
+              <ion-icon size="large" name="download-outline"></ion-icon>
+            </a>
+          </ion-card-content>
+        </ion-card>
+
+      </ng-template>
+
+    </div>
+  </div>
+
+  <div *ngFor="let file of files">
+    <app-uploadfile [file]=file></app-uploadfile>
+  </div>
+
+
+
+</ion-content>

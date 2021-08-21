@@ -1,0 +1,45 @@
+<ion-card *ngIf="percentage | async as pct" [ngStyle]="removeCard(pct)" #Uploadcard>
+  <ion-card-header>
+    <ion-card-subtitle>
+      <i>Upload in process...</i>
+    </ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    {{file.name}}
+
+    <!-- <div *ngIf="pct!=1; else uploadBlock"> -->
+    <ion-progress-bar [value]="pct" type="md"></ion-progress-bar>
+    {{pct*100 | number}}%
+
+    <div *ngIf="snapshot | async as snap">
+
+      {{snap.bytesTransferred/1000}} / {{snap.totalBytes/1000}} MB
+
+      <!-- <div *ngIf="downloadUrl as url">
+      <img [src]="url">
+      <br>
+    </div> -->
+
+      <div class="btn_container">
+        <ion-fab-button size="small" (click)="task.pause()" [disabled]="!isActive(snap)">
+          <ion-icon name="pause"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button size="small" (click)="task.cancel()" [disabled]="!isActive(snap)">
+          <ion-icon name="close"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button size="small" (click)="task.resume()" [disabled]="!(snap?.state === 'paused')">
+          <ion-icon name="play"></ion-icon>
+        </ion-fab-button>
+      </div>
+
+    </div>
+
+    <!-- </div> -->
+
+    <!-- <ng-template #uploadBlock>
+      <ion-icon name="checkmark-circle-outline"></ion-icon>
+    </ng-template> -->
+
+  </ion-card-content>
+</ion-card>

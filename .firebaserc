@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-firebase-auth-b1256": {
+      "hosting": {
+        "app": [
+          "angular-firebase-auth-b1256"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-firebase-auth-b1256"
+  }
+}

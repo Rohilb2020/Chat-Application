@@ -1,0 +1,15 @@
+{
+	"appId": "com.chatapp.ionic",
+	"appName": "chat-app",
+	"webDir": "www",
+	"bundledWebRuntime": false,
+	"plugins": {
+		"PushNotifications": {
+			"presentationOptions": [
+				"badge",
+				"sound",
+				"alert"
+			]
+		}
+	}
+}

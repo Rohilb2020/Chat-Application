@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "353997651642",
+    "firebase_url": "https://angular-firebase-auth-b1256-default-rtdb.firebaseio.com",
+    "project_id": "angular-firebase-auth-b1256",
+    "storage_bucket": "angular-firebase-auth-b1256.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:353997651642:android:268ddbc8d5f00949110c83",
+        "android_client_info": {
+          "package_name": "com.chatapp.ionic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "353997651642-rlprob79vlvn6e8qpjpa1or64fospp7n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfnKH17Glxc2xad0S3lzckmY17ypOhbfk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "353997651642-rlprob79vlvn6e8qpjpa1or64fospp7n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
